@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.parcial_final_poo;
+package com.mycompany.examenfinalpoo;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -10,12 +10,12 @@ import java.net.Socket;
 
 /**
  *
- * @author LENOVO
+ * @author juank
  */
-public class Parcial_Final_POO {
+public class ExamenFinalPOO {
 
     public static void main(String[] args) {
-       try {
+        try {
             ServerSocket serverSocket = new ServerSocket(5000);
             System.out.println("Servidor esperando conexiones en puerto 5000...");
 
@@ -28,5 +28,5 @@ public class Parcial_Final_POO {
             System.out.println("Error en el servidor: " + e);
         }
     }
-    }
+}
 

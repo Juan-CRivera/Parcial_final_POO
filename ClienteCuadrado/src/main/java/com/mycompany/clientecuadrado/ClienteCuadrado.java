@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package clientecuadrado;
+package com.mycompany.clientecuadrado;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,9 +14,8 @@ import java.net.Socket;
 
 /**
  *
- * @author David Ventura
+ * @author juank
  */
-
 public class ClienteCuadrado {
 
     public static void main(String[] args) {
@@ -31,28 +30,28 @@ public class ClienteCuadrado {
             PrintWriter writer = new PrintWriter(outputStream, true);
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
-             System.out.print("Ingresa tu nombre: ");
+            System.out.print("Ingresa tu nombre: ");
             String nombre = consola.readLine(); 
             writer.println(nombre); 
-            String respuesta = reader.readLine(); 
-            System.out.println("Respuesta del servidor: " + respuesta);
+             
             
             System.out.print("Ingrese su numero: ");
             String numero = consola.readLine();
             writer.println(numero); 
-            String respuestaNum = reader.readLine(); 
-             System.out.println("Respuesta del servidor: " + respuestaNum);
             
+            
+            String respuesta = reader.readLine();
+            String respuestaNum = reader.readLine(); 
             String fechaHora = reader.readLine();
+            
+            System.out.println("Respuesta del servidor: " + respuesta);
+            System.out.println("Respuesta del servidor: " + respuestaNum);
             System.out.println("Respuesta del servidor: " + fechaHora);
-
+             
             socket.close();
         } catch (IOException e) {
             System.out.println("Error en el cliente: " + e);
         }
+       
     }
-           
-            
-        }
-    
-
+}

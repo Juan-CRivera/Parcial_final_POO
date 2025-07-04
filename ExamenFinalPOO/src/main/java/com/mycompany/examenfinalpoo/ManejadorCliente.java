@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.parcial_final_poo;
+package com.mycompany.examenfinalpoo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author juank
  */
-public class ManejadorCliente implements Runnable {
+public class ManejadorCliente implements Runnable{
     private Socket socketCliente;
 
     public ManejadorCliente(Socket socketCliente) {
@@ -47,7 +47,7 @@ public class ManejadorCliente implements Runnable {
                 int cuadrado = numeroStr * numeroStr;
                 writer.println("El cuadrado de " + numero + " es: " + cuadrado);
             } catch (NumberFormatException e) {
-                writer.println("Error: el número ingresado no es válido.");
+                writer.println("Error: el numero ingresado no es valido.");
             }
 
             
@@ -55,9 +55,15 @@ public class ManejadorCliente implements Runnable {
             DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             writer.println("Fecha y hora del servidor: " + ahora.format(formato)); 
             
-            socketCliente.close();
+            try {
+                socketCliente.close();
+                System.out.println("Cliente " + nombre + " desconectado.");
+            } catch (IOException e) {
+                System.out.println("Error al cerrar conexion: " + e);
+            }
         } catch (IOException e) {
             System.out.println("Error con cliente: " + e);
         }
+        
     }
 }
