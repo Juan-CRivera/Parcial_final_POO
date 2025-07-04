@@ -31,15 +31,28 @@ public class ClienteCuadrado {
             PrintWriter writer = new PrintWriter(outputStream, true);
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
+             System.out.print("Ingresa tu nombre: ");
+            String nombre = consola.readLine(); 
+            writer.println(nombre); 
+            String respuesta = reader.readLine(); 
+            System.out.println("Respuesta del servidor: " + respuesta);
             
+            System.out.print("Ingrese su numero: ");
+            String numero = consola.readLine();
+            writer.println(numero); 
+            String respuestaNum = reader.readLine(); 
+             System.out.println("Respuesta del servidor: " + respuestaNum);
             
-            
-            
-            
+            String fechaHora = reader.readLine();
+            System.out.println("Respuesta del servidor: " + fechaHora);
 
-            
+            socket.close();
         } catch (IOException e) {
-            
+            System.out.println("Error en el cliente: " + e);
         }
     }
-}
+           
+            
+        }
+    
+
